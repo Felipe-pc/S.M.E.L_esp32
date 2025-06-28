@@ -1,18 +1,18 @@
 from machine import Pin
 def teclado(a=True):
     #pinos de envio de sinal do teclado
-    Pin_envio1=Pin(13,Pin.IN,Pin.PULL_DOWN)#pino digital 13
-    Pin_envio2=Pin(12,Pin.IN,Pin.PULL_DOWN)#pino digital 12
-    Pin_envio3=Pin(14,Pin.IN,Pin.PULL_DOWN)#pino digital 14
-    Pin_envio4=Pin(27,Pin.IN,Pin.PULL_DOWN)#pino digital 27
-    Pin_envio5=Pin(26,Pin.IN,Pin.PULL_DOWN)#pino digital 26
-    Pin_envio6=Pin(25,pin.IN,Pin.PULL_DOWN)#pino digital 25
+    Pin_envio1=Pin(13,Pin.IN,Pin.PULL_DOWN)#pino digital (coluna) 13
+    Pin_envio2=Pin(12,Pin.IN,Pin.PULL_DOWN)#pino digital (coluna) 12
+    Pin_envio3=Pin(14,Pin.IN,Pin.PULL_DOWN)#pino digital (coluna) 14
+    Pin_envio4=Pin(27,Pin.IN,Pin.PULL_DOWN)#pino digital (coluna) 27
+    Pin_envio5=Pin(26,Pin.IN,Pin.PULL_DOWN)#pino digital (coluna) 26
+    Pin_envio6=Pin(25,pin.IN,Pin.PULL_DOWN)#pino digital (coluna) 25
     #pinos de entra de sinal do teclado
-    Pin_entrada1=Pin(15,Pin.OUT)#pino digital 15
-    Pin_entrada2=Pin(2,Pin.OUT)#pino digital 2
-    Pin_entrada3=Pin(4,Pin.OUT)#pino digital 4
-    Pin_entrada4=Pin(5,Pin.OUT)#pino digital 5
-    Pin_entrada5=Pin(18,Pin.OUT)#pino digital 18
+    Pin_entrada1=Pin(15,Pin.OUT)#pino digital (linha) 15
+    Pin_entrada2=Pin(2,Pin.OUT)#pino digital (linha) 2
+    Pin_entrada3=Pin(4,Pin.OUT)#pino digital (linha) 4
+    Pin_entrada4=Pin(5,Pin.OUT)#pino digital (linha) 5
+    Pin_entrada5=Pin(18,Pin.OUT)#pino digital (linha) 18
     #varialveis
     operacional=True
     alfabeto=[]
