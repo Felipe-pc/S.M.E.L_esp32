@@ -13,12 +13,26 @@ try:
     drive_oled_display128x64.display_clear()
     diretorio_temporarios=[]
     while operacional:
-        arq=Terminal.terminal()
-        endboot=Terminal.terminal()
-        if endboot == False:
+        comando=Terminal.terminal()
+        if comando == 'endboot':
             operacional=False
             drive_oled_display128x64.display_clear()
-        diretorio_temporarios.append(arq)
+        elif comando== 'mkdir':
+            arquivo=t_arquivos.t_arquivos()
+            diretorio_temporarios.append(arquivo)
+        elif comando=='parq':
+            drive_oled_display128x64.display('digiti o',0,0)
+            drive_oled_display128x64.display('numero do',16,0)
+            drive_oled_display128x64.display('arquivo',26,0)
+            chamada=drive2_teclado_matriz6x5.teclado()
+            try:
+                drive_oled_display128x64.display_clear()
+                drive_oled_display128x64.display(diretorio_temporarios[chamada],0,0)
+            except:
+                print("diretorio inesistente")
+                drive_oled_display128x64.display('diretorio',0,0)
+                drive_oled_display128x64.display('inesistente',16,0)
+
 except ImportError:
     print("erro nos driver principais")
     print("imposivel execultar o sistema")

@@ -4,6 +4,7 @@ import time
 import t_arquivos
 def Terminal():
     operacional=True
+    prioridade=0
     while operacional:
         #entrada
         resposta=''
@@ -24,17 +25,29 @@ def Terminal():
 
         #criar pasta(text)
         if resposta=='mkdir':
-            arq=t_arquivos.t_arquivos()
-            return arq
+            operacional=False
+            prioridade=1
 
         #comando(endboot)
         if resposta=='endboot'
             operacional=False
+            prioridade=0
 
+        #pesquisa diretori
+        if resposta=='parq'
+            operacional=False
+            prioridade=2
 
+#criar arquivos
+if operacional==False and prioridade=1:
+    return 'mkdir'
 
-if operacional==False:
-    return False
+#encerrar
+elif operacional==False and prioridade=0:
+    return 'endboot'
 
+#procurar arquivos
+elif operacional==False and prioridade=2:
+    return 'parq'
 
 
