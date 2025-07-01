@@ -1,4 +1,5 @@
 from machine import Pin,I2C#bibliotecas
+import ssd1306
 #comfiguraçao do display
 i2c=I2C(0,scl=Pin(22),sca=Pin(21))
 oled=ssd1306.SSD1306_I2C(128,64,i2c)
