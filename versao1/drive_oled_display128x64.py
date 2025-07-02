@@ -7,7 +7,7 @@ try:
 
     #ferramenta de uso para mostrar na tela
     def display(a,b,c):
-        oled.text(f'{a}',b,c)
+        oled.text(f'{a}',c,b)
         oled.show()
 
 
