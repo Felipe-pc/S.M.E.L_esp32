@@ -30,26 +30,26 @@ try:
                 prioridade=1
 
             #comando(endboot)
-            if resposta=='endboot'
+            if resposta=='endboot':
                 operacional=False
                 prioridade=0
 
             #pesquisa diretori
-            if resposta=='parq'
+            if resposta=='parq':
                 operacional=False
                 prioridade=2
 
     #criar arquivos
-    if operacional==False and prioridade=1:
-        return 'mkdir'
+        if operacional==False and prioridade==1:
+            return 'mkdir'
 
     #encerrar
-    elif operacional==False and prioridade=0:
-        return 'endboot'
+        elif operacional==False and prioridade==0:
+            return 'endboot'
 
     #procurar arquivos
-    elif operacional==False and prioridade=2:
-        return 'parq'
+        elif operacional==False and prioridade==2:
+            return 'parq'
 
 
 except:
