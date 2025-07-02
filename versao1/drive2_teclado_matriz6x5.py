@@ -252,11 +252,13 @@ try:
 #opção tecladoVirtual
         else:
             if a==True:
-                alfabeto=input('>>> ')
+                alfabeto=input('a  ')
                 return alfabeto
+                break
             else:
-                numero=int(input("n>>>"))
+                numero=int(input("n "))
                 return numero
+                break
 except:
     print("erro de drive teclado 2")
     print("verificar código")

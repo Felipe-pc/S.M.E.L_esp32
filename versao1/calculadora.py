@@ -1,9 +1,10 @@
 try:
-   import drive_oled_display128x64
+    import drive_oled_display128x64
     import drive2_teclado_matriz6x5
+    import time
 
 
-    def calculadora():
+    def Calculadora():
         #variaveis
         memoriaent=[]
         soma=0
@@ -29,14 +30,9 @@ try:
             drive_oled_display128x64.display('>>>',36,0)
             resposta2=drive2_teclado_matriz6x5.teclado(False)
             drive_oled_display128x64.display_clear()
-            drive_oled_display128x64.display('digiti os',0,0)
-            drive_oled_display128x64.display('numeros',16,0)
-            drive_oled_display128x64.display(f'>>> {resposta1}',26,0)
-            drive_oled_display128x64.display(f'>>> {resposta2}',36,0)
-            drive_oled_display128x64.display_clear()
-            drive_oled_display128x64.display('resposta',0,0)
             soma=resposta1+resposta2
             drive_oled_display128x64.display(f'{soma}',16,0)
+            time.sleep(5)
         #subitraçao
         if resposta=='-':
             drive_oled_display128x64.display_clear()
@@ -51,14 +47,9 @@ try:
             drive_oled_display128x64.display('>>>',36,0)
             resposta2=drive2_teclado_matriz6x5.teclado(False)
             drive_oled_display128x64.display_clear()
-            drive_oled_display128x64.display('digiti os',0,0)
-            drive_oled_display128x64.display('numeros',16,0)
-            drive_oled_display128x64.display(f'>>> {resposta1}',26,0)
-            drive_oled_display128x64.display(f'>>> {resposta2}',36,0)
-            drive_oled_display128x64.display_clear()
-            drive_oled_display128x64.display('resposta',0,0)
             subitracao=resposta1-resposta2
             drive_oled_display128x64.display(f'{subitracao}',16,0)
+            time.sleep(5)
         #multiplicaçao
         if resposta=='*':
             drive_oled_display128x64.display_clear()
@@ -73,14 +64,9 @@ try:
             drive_oled_display128x64.display('>>>',36,0)
             resposta2=drive2_teclado_matriz6x5.teclado(False)
             drive_oled_display128x64.display_clear()
-            drive_oled_display128x64.display('digiti os',0,0)
-            drive_oled_display128x64.display('numeros',16,0)
-            drive_oled_display128x64.display(f'>>> {resposta1}',26,0)
-            drive_oled_display128x64.display(f'>>> {resposta2}',36,0)
-            drive_oled_display128x64.display_clear()
-            drive_oled_display128x64.display('resposta',0,0)
             multiplicacao=resposta1*resposta2
             drive_oled_display128x64.display(f'{multiplicacao}',16,0)
+            time.sleep(5)
         #divisao
         if resposta=='/':
             drive_oled_display128x64.display_clear()
@@ -95,14 +81,9 @@ try:
             drive_oled_display128x64.display('>>>',36,0)
             resposta2=drive2_teclado_matriz6x5.teclado(False)
             drive_oled_display128x64.display_clear()
-            drive_oled_display128x64.display('digiti os',0,0)
-            drive_oled_display128x64.display('numeros',16,0)
-            drive_oled_display128x64.display(f'>>> {resposta1}',26,0)
-            drive_oled_display128x64.display(f'>>> {resposta2}',36,0)
-            drive_oled_display128x64.display_clear()
-            drive_oled_display128x64.display('resposta',0,0)
             divisao=resposta1/resposta2
             drive_oled_display128x64.display(f'{divisao}',16,0)
+            time.sleep(5)
 
 except:
     print("erro na calculadora")

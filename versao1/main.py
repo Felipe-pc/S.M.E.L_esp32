@@ -4,6 +4,7 @@ try:
     import Terminal
     import time
     import t_arquivos
+    import formatdor_de_tela
     operacional=True
     drive_oled_display128x64.display('iniciando…',0,0)
     time.sleep(1)
@@ -18,7 +19,7 @@ try:
             operacional=False
             drive_oled_display128x64.display_clear()
         elif comando== 'mkdir':
-            arquivo=t_arquivos.t_arquivos()
+            arquivo=t_arquivos.arquivo()
             diretorio_temporarios.append(arquivo)
         elif comando=='parq':
             drive_oled_display128x64.display('digiti o',0,0)
@@ -27,7 +28,7 @@ try:
             chamada=drive2_teclado_matriz6x5.teclado()
             try:
                 drive_oled_display128x64.display_clear()
-                drive_oled_display128x64.display(diretorio_temporarios[chamada],0,0)
+                formatdor_de_tela.formatarDisplay(diretorio_temporarios[chamada])
             except:
                 print("diretorio inesistente")
                 drive_oled_display128x64.display('diretorio',0,0)
