@@ -34,10 +34,21 @@ try:
                 operacional=False
                 prioridade=0
 
-            #pesquisa diretori
-            if resposta=='parq':
+            #pesquisa diretorio
+            if resposta=='cd':
                 operacional=False
                 prioridade=2
+
+            #deletar o diretorio
+            if resposta=='rm':
+                operacional=False
+                prioridade=3
+
+            else:
+               drive_oled_display128x64.display_clear()
+               drive_oled_display128x64.display("erro:",0,0)
+               drive_oled_display128x64.display("SyntaxError",16,0)
+               time.sleep(4)
 
     #criar arquivos
         if operacional==False and prioridade==1:
@@ -49,8 +60,11 @@ try:
 
     #procurar arquivos
         elif operacional==False and prioridade==2:
-            return 'parq'
+            return 'cd'
 
+    #deletar o diretorio
+        elif operacional==False and prioridade==3:
+            return 'rm'
 
 except:
     print("terminal esta com erro")
