@@ -1,5 +1,6 @@
 try:
     from machine import Pin
+    import time
     def teclado(a=True):
         tecladoVirtual=False
         if tecladoVirtual==False:
@@ -23,15 +24,15 @@ try:
             inverter=False
             delei=0.2
             while operacional:
-                Pin_entrada1.value(1)
-                Pin_entrada2.value(1)
-                Pin_entrada3.value(1)
-                Pin_entrada4.value(1)
-                Pin_entrada5.value(1)
+                Pin_entrada1.value(0)
+                Pin_entrada2.value(0)
+                Pin_entrada3.value(0)
+                Pin_entrada4.value(0)
+                Pin_entrada5.value(0)
                 #leituras
 
                 #coluna 1 linha 1 a 5
-
+                Pin_entrada1.value(1)
                 if Pin_entrada1.value()==1 and Pin_envio1.value()==1:
                     if a==False:
                         numero.append(1)
@@ -40,7 +41,10 @@ try:
                     else:
                         alfabeto.append('a')
                     time.sleep(delei)
-                elif Pin_entrada2.value()==1 and Pin_envio1.value()==1:
+                    print('a')
+                Pin_entrada1.value(0)
+                Pin_entrada2.value(1)
+                if Pin_entrada2.value()==1 and Pin_envio1.value()==1:
                     if a==False:
                         numero.append(4)
                     elif inverter==True:
@@ -48,7 +52,10 @@ try:
                     else:
                         alfabeto.append('g')
                     time.sleep(delei)
-                elif Pin_entrada3.value()==1 and Pin_envio1.value()==1:
+                    print('g')
+                Pin_entrada2.value(0)
+                Pin_entrada3.value(1)
+                if Pin_entrada3.value()==1 and Pin_envio1.value()==1:
                     if a==False:
                         numero.append(7)
                     elif inverter==True:
@@ -56,18 +63,27 @@ try:
                     else:
                         alfabeto.append('m')
                     time.sleep(delei)
-                elif Pin_entrada4.value()==1 and Pin_envio1.value()==1:
+                    print('m')
+                Pin_entrada3.value(0)
+                Pin_entrada4.value(1)
+                if Pin_entrada4.value()==1 and Pin_envio1.value()==1:
                     if inverter==True:
                         alfabeto.append('<')
                     else:
                         alfabeto.append('s')
                     time.sleep(delei)
-                elif Pin_entrada5.value()==1 and Pin_envio1.value()==1:
+                    print('s')
+                Pin_entrada4.value(0)
+                Pin_entrada5.value(1)
+                if Pin_entrada5.value()==1 and Pin_envio1.value()==1:
                     if inverter==True:
                         alfabeto.append('/')
                     else:
                         alfabeto.append('y')
                     time.sleep(delei)
+                    print('y')
+                Pin_entrada5.value(0)
+                Pin_entrada1.value(1)
                 #coluna 2 linha 1 a 5
 
                 if Pin_entrada1.value()==1 and Pin_envio2.value()==1:
@@ -78,7 +94,10 @@ try:
                     else:
                         alfabeto.append('b')
                     time.sleep(delei)
-                elif Pin_entrada2.value()==1 and Pin_envio2.value()==1:
+                    print('b')
+                Pin_entrada1.value(0)
+                Pin_entrada2.value(1)
+                if Pin_entrada2.value()==1 and Pin_envio2.value()==1:
                     if a==False:
                         numero.append(5)
                     elif inverter==True:
@@ -86,7 +105,10 @@ try:
                     else:
                         alfabeto.append('h')
                     time.sleep(delei)
-                elif Pin_entrada3.value()==1 and Pin_envio2.value()==1:
+                    print('h')
+                Pin_entrada2.value(0)
+                Pin_entrada3.value(1)
+                if Pin_entrada3.value()==1 and Pin_envio2.value()==1:
                     if a==False:
                         numero.append(8)
                     elif inverter==True:
@@ -94,18 +116,27 @@ try:
                     else:
                         alfabeto.append('n')
                     time.sleep(delei)
-                elif Pin_entrada4.value()==1 and Pin_envio2.value()==1:
-                    if inverter=True:
+                    print('n')
+                Pin_entrada3.value(0)
+                Pin_entrada4.value(1)
+                if Pin_entrada4.value()==1 and Pin_envio2.value()==1:
+                    if inverter==True:
                         alfabeto.append('>')
                     else:
                         alfabeto.append('t')
                     time.sleep(delei)
-                elif Pin_entrada5.value()==1 and Pin_envio2.value()==1:
-                    if inverter=True:
+                    print('t')
+                Pin_entrada4.value(0)
+                Pin_entrada5.value(1)
+                if Pin_entrada5.value()==1 and Pin_envio2.value()==1:
+                    if inverter==True:
                         alfabeto.append("*")
                     else:
                         alfabeto.append('z')
                     time.sleep(delei)
+                    print('z')
+                Pin_entrada5.value(0)
+                Pin_entrada1.value(1)
 
                 #coluna 3 linha 1 a 5
 
@@ -118,7 +149,10 @@ try:
                     else:
                         alfabeto.append('c')
                     time.sleep(delei)
-                elif Pin_entrada2.value()==1 and Pin_envio3.value()==1:
+                    print('c')
+                Pin_entrada1.value(0)
+                Pin_entrada2.value(1)
+                if Pin_entrada2.value()==1 and Pin_envio3.value()==1:
                     if a==False:
                         numero.append(6)
                     elif inverter==True:
@@ -126,7 +160,10 @@ try:
                     else:
                         alfabeto.append('i')
                     time.sleep(delei)
-                elif Pin_entrada3.value()==1 and Pin_envio3.value()==1:
+                    print('i')
+                Pin_entrada2.value(0)
+                Pin_entrada3.value(1)
+                if Pin_entrada3.value()==1 and Pin_envio3.value()==1:
                     if a==False:
                         numero.append(9)
                     elif inverter==True:
@@ -134,19 +171,27 @@ try:
                     else:
                         alfabeto.append('o')
                     time.sleep(delei)
-                elif Pin_entrada4.value()==1 and Pin_envio3.value()==1:
-                    if inverter=True:
+                    print('o')
+                Pin_entrada3.value(0)
+                Pin_entrada4.value(1)
+                if Pin_entrada4.value()==1 and Pin_envio3.value()==1:
+                    if inverter==True:
                         alfabeto.append('-')
                     else:
                         alfabeto.append('u')
                     time.sleep(delei)
-                elif Pin_entrada5.value()==1 and Pin_envio3.value()==1:
-                    if inverter=True:
+                    print('u')
+                Pin_entrada4.value(0)
+                Pin_entrada5.value(1)
+                if Pin_entrada5.value()==1 and Pin_envio3.value()==1:
+                    if inverter==True:
                         alfabeto.append(' ')
                     else:
                         alfabeto.append(' ')
                     time.sleep(delei)
-
+                    print(' ')
+                Pin_entrada5.value(0)
+                Pin_entrada1.value(1)
                 #coluna 4 linha 1 a 5
 
                 if Pin_entrada1.value()==1 and Pin_envio4.value()==1:
@@ -157,28 +202,41 @@ try:
                     else:
                         alfabeto.append('d')
                     time.sleep(delei)
-                elif Pin_entrada2.value()==1 and Pin_envio4.value()==1:
+                    print('d')
+                Pin_entrada1.value(0)
+                Pin_entrada2.value(1)
+                if Pin_entrada2.value()==1 and Pin_envio4.value()==1:
                     if inverter==True:
                         alfabeto.append('=')
                     else:
                         alfabeto.append('j')
                     time.sleep(delei)
-                elif Pin_entrada3.value()==1 and Pin_envio4.value()==1:
+                    print('j')
+                Pin_entrada2.value(0)
+                Pin_entrada3.value(1)
+                if Pin_entrada3.value()==1 and Pin_envio4.value()==1:
                     if inverter==True:
                         alfabeto.append('.')
                     else:
                         alfabeto.append('p')
                     time.sleep(delei)
-                elif Pin_entrada4.value()==1 and Pin_envio4.value()==1:
+                    print('p')
+                Pin_entrada3.value(0)
+                Pin_entrada4.value(1)
+                if Pin_entrada4.value()==1 and Pin_envio4.value()==1:
                     if inverter==True:
                         alfabeto.append('(')
                     else:
                         alfabeto.append('v')
                     time.sleep(delei)
-                elif Pin_entrada5.value()==1 and Pin_envio4.value()==1:
+                    print('v')
+                Pin_entrada4.value(0)
+                Pin_entrada5.value(1)
+                if Pin_entrada5.value()==1 and Pin_envio4.value()==1:
                     operacional=False  #enter
                     time.sleep(delei)
-
+                Pin_entrada5.value(0)
+                Pin_entrada1.value(1)
                 #coluna 5 linha 1 a 5
 
                 if Pin_entrada1.value()==1 and Pin_envio5.value()==1:
@@ -187,29 +245,43 @@ try:
                     else:
                         alfabeto.append('e')
                     time.sleep(delei)
-                elif Pin_entrada2.value()==1 and Pin_envio5.value()==1:
+                    print('e')
+                Pin_entrada1.value(0)
+                Pin_entrada2.value(1)
+                if Pin_entrada2.value()==1 and Pin_envio5.value()==1:
                     if inverter==True:
                         alfabeto.append('[')
                     else:
                         alfabeto.append('k')
                     time.sleep(delei)
-                elif Pin_entrada3.value()==1 and Pin_envio5.value()==1:
+                    print('k')
+                Pin_entrada2.value(0)
+                Pin_entrada3.value(1)
+                if Pin_entrada3.value()==1 and Pin_envio5.value()==1:
                     if inverter==True:
                         alfabeto.append('%')
                     else:
                         alfabeto.append('q')
                     time.sleep(delei)
-                elif Pin_entrada4.value()==1 and Pin_envio5.value()==1:
+                    print('q')
+                Pin_entrada3.value(0)
+                Pin_entrada4.value(1)
+                if Pin_entrada4.value()==1 and Pin_envio5.value()==1:
                     if inverter==True:
                         alfabeto.append(')')
                     else:
                         alfabeto.append('w')
                     time.sleep(delei)
-                elif Pin_entrada5.value()==1 and Pin_envio5.value()==1:
+                    print('w')
+                Pin_entrada4.value(0)
+                Pin_entrada5.value(1)
+                if Pin_entrada5.value()==1 and Pin_envio5.value()==1:
                     tamanho=len(alfabeto)
                     tamanho=tamanho-1
                     alfabeto.remove(tamanho)
                     time.sleep(delei)
+                Pin_entrada5.value(0)
+                Pin_entrada1.value(1)
 
                 #coluna 6 linha 1 a 5
 
@@ -219,46 +291,59 @@ try:
                     else:
                         alfabeto.append('f')
                     time.sleep(delei)
-                elif Pin_entrada2.value()==1 and Pin_envio6.value()==1:
+                    print('f')
+                Pin_entrada1.value(0)
+                Pin_entrada2.value(1)
+                if Pin_entrada2.value()==1 and Pin_envio6.value()==1:
                     if inverter==True:
                         alfabeto.append(']')
                     else:
                         alfabeto.append('l')
                     time.sleep(delei)
-                elif Pin_entrada3.value()==1 and Pin_envio6.value()==1:
+                    print('l')
+                Pin_entrada2.value(0)
+                Pin_entrada3.value(1)
+                if Pin_entrada3.value()==1 and Pin_envio6.value()==1:
                     if inverter==True:
                         alfabeto.append('!')
                     else:
                         alfabeto.append('r')
+                        print('r')
                     time.sleep(delei)
-                elif Pin_entrada4.value()==1 and Pin_envio6.value()==1:
+                Pin_entrada3.value(0)
+                Pin_entrada4.value(1)
+                if Pin_entrada4.value()==1 and Pin_envio6.value()==1:
                     if inverter==True:
                         alfabeto.append('~')
                     else:
                         alfabeto.append('x')
                     time.sleep(delei)
-                elif Pin_entrada5.value()==1 and Pin_envio6.value()==1:
+                    print('x')
+                Pin_entrada4.value(0)
+                Pin_entrada5.value(1)
+                if Pin_entrada5.value()==1 and Pin_envio6.value()==1:
                     if inverter == True:
                         inverter=False
                     else:
                         inverter=True
                     time.sleep(delei)
-
+                Pin_entrada5.value(0)
             #envio de informação
             if a==False:
-                return numero
+                return numero[0]
             else:
-                return alfabeto
+                return alfabeto[0]
 #opção tecladoVirtual
         else:
-            if a==True:
-                alfabeto=input('a  ')
-                return alfabeto
-                break
-            else:
-                numero=int(input("n "))
-                return numero
-                break
+            while True:
+                if a==True:
+                    alfabeto=input('a ')
+                    return alfabeto
+                    break
+                else:
+                    numero=int(input("n "))
+                    return numero
+                    break
 except:
     print("erro de drive teclado 2")
     print("verificar código")
