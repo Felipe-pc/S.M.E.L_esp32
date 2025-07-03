@@ -2,6 +2,7 @@ try:
     from machine import Pin
     import drive_oled_display128x64
     import time
+    import formatador_de_tela
     def teclado(a=True):
         tecladoVirtual=False
         if tecladoVirtual==False:
@@ -24,6 +25,8 @@ try:
             numero=[]
             inverter=False
             delei=0.2
+            atualiza=0
+            atualizado=0
             while operacional:
                 Pin_entrada1.value(0)
                 Pin_entrada2.value(0)
@@ -31,7 +34,9 @@ try:
                 Pin_entrada4.value(0)
                 Pin_entrada5.value(0)
                 #leituras
-                drive_oled_display128x64.display(alfabeto,16,0)
+                if atualiza > atualizado:
+                    formatador_de_tela.formatarDisplay(alfabeto)
+                    atualizado=atualizado+1
                 #coluna 1 linha 1 a 5
                 Pin_entrada1.value(1)
                 if Pin_entrada1.value()==1 and Pin_envio1.value()==1:
@@ -42,6 +47,7 @@ try:
                     else:
                         alfabeto.append('a')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('a')
                 Pin_entrada1.value(0)
                 Pin_entrada2.value(1)
@@ -53,6 +59,7 @@ try:
                     else:
                         alfabeto.append('g')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('g')
                 Pin_entrada2.value(0)
                 Pin_entrada3.value(1)
@@ -64,6 +71,7 @@ try:
                     else:
                         alfabeto.append('m')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('m')
                 Pin_entrada3.value(0)
                 Pin_entrada4.value(1)
@@ -73,6 +81,7 @@ try:
                     else:
                         alfabeto.append('s')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('s')
                 Pin_entrada4.value(0)
                 Pin_entrada5.value(1)
@@ -82,6 +91,7 @@ try:
                     else:
                         alfabeto.append('y')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('y')
                 Pin_entrada5.value(0)
                 Pin_entrada1.value(1)
@@ -95,6 +105,7 @@ try:
                     else:
                         alfabeto.append('b')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('b')
                 Pin_entrada1.value(0)
                 Pin_entrada2.value(1)
@@ -106,6 +117,7 @@ try:
                     else:
                         alfabeto.append('h')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('h')
                 Pin_entrada2.value(0)
                 Pin_entrada3.value(1)
@@ -117,6 +129,7 @@ try:
                     else:
                         alfabeto.append('n')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('n')
                 Pin_entrada3.value(0)
                 Pin_entrada4.value(1)
@@ -126,6 +139,7 @@ try:
                     else:
                         alfabeto.append('t')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('t')
                 Pin_entrada4.value(0)
                 Pin_entrada5.value(1)
@@ -135,6 +149,7 @@ try:
                     else:
                         alfabeto.append('z')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('z')
                 Pin_entrada5.value(0)
                 Pin_entrada1.value(1)
@@ -150,6 +165,7 @@ try:
                     else:
                         alfabeto.append('c')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('c')
                 Pin_entrada1.value(0)
                 Pin_entrada2.value(1)
@@ -161,6 +177,7 @@ try:
                     else:
                         alfabeto.append('i')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('i')
                 Pin_entrada2.value(0)
                 Pin_entrada3.value(1)
@@ -172,6 +189,7 @@ try:
                     else:
                         alfabeto.append('o')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('o')
                 Pin_entrada3.value(0)
                 Pin_entrada4.value(1)
@@ -181,6 +199,7 @@ try:
                     else:
                         alfabeto.append('u')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('u')
                 Pin_entrada4.value(0)
                 Pin_entrada5.value(1)
@@ -190,6 +209,7 @@ try:
                     else:
                         alfabeto.append(' ')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print(' ')
                 Pin_entrada5.value(0)
                 Pin_entrada1.value(1)
@@ -203,6 +223,7 @@ try:
                     else:
                         alfabeto.append('d')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('d')
                 Pin_entrada1.value(0)
                 Pin_entrada2.value(1)
@@ -212,6 +233,7 @@ try:
                     else:
                         alfabeto.append('j')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('j')
                 Pin_entrada2.value(0)
                 Pin_entrada3.value(1)
@@ -221,6 +243,7 @@ try:
                     else:
                         alfabeto.append('p')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('p')
                 Pin_entrada3.value(0)
                 Pin_entrada4.value(1)
@@ -230,6 +253,7 @@ try:
                     else:
                         alfabeto.append('v')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('v')
                 Pin_entrada4.value(0)
                 Pin_entrada5.value(1)
@@ -246,6 +270,7 @@ try:
                     else:
                         alfabeto.append('e')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('e')
                 Pin_entrada1.value(0)
                 Pin_entrada2.value(1)
@@ -255,6 +280,7 @@ try:
                     else:
                         alfabeto.append('k')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('k')
                 Pin_entrada2.value(0)
                 Pin_entrada3.value(1)
@@ -264,6 +290,7 @@ try:
                     else:
                         alfabeto.append('q')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('q')
                 Pin_entrada3.value(0)
                 Pin_entrada4.value(1)
@@ -273,15 +300,17 @@ try:
                     else:
                         alfabeto.append('w')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('w')
                 Pin_entrada4.value(0)
                 Pin_entrada5.value(1)
                 if Pin_entrada5.value()==1 and Pin_envio5.value()==1:
                     tamanho=len(alfabeto)
                     tamanho=tamanho-1
-                    alfabeto.remove(tamanho)
+                    alfabeto.remove(alfabeto[tamanho])
                     time.sleep(delei)
                     drive_oled_display128x64.display_clear()
+                    formatador_de_tela.formatarDisplay(alfabeto)
                 Pin_entrada5.value(0)
                 Pin_entrada1.value(1)
 
@@ -293,6 +322,7 @@ try:
                     else:
                         alfabeto.append('f')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('f')
                 Pin_entrada1.value(0)
                 Pin_entrada2.value(1)
@@ -302,6 +332,7 @@ try:
                     else:
                         alfabeto.append('l')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('l')
                 Pin_entrada2.value(0)
                 Pin_entrada3.value(1)
@@ -310,8 +341,9 @@ try:
                         alfabeto.append('!')
                     else:
                         alfabeto.append('r')
-                        print('r')
+                    print('r')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                 Pin_entrada3.value(0)
                 Pin_entrada4.value(1)
                 if Pin_entrada4.value()==1 and Pin_envio6.value()==1:
@@ -320,6 +352,7 @@ try:
                     else:
                         alfabeto.append('x')
                     time.sleep(delei)
+                    atualiza=atualiza+1
                     print('x')
                 Pin_entrada4.value(0)
                 Pin_entrada5.value(1)
