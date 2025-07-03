@@ -1,5 +1,6 @@
 try:
     from machine import Pin
+    import drive_oled_display128x64
     import time
     def teclado(a=True):
         tecladoVirtual=False
@@ -30,7 +31,7 @@ try:
                 Pin_entrada4.value(0)
                 Pin_entrada5.value(0)
                 #leituras
-
+                drive_oled_display128x64.display(alfabeto,16,0)
                 #coluna 1 linha 1 a 5
                 Pin_entrada1.value(1)
                 if Pin_entrada1.value()==1 and Pin_envio1.value()==1:
@@ -280,6 +281,7 @@ try:
                     tamanho=tamanho-1
                     alfabeto.remove(tamanho)
                     time.sleep(delei)
+                    drive_oled_display128x64.display_clear()
                 Pin_entrada5.value(0)
                 Pin_entrada1.value(1)
 
