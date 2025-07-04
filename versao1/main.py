@@ -31,7 +31,7 @@ try:
             chamada=drive2_teclado_matriz6x5.teclado()
             try:
                 drive_oled_display128x64.display_clear()
-                formatdor_de_tela.formatarDisplay(diretorio_temporarios[chamada])
+                formatador_de_tela.formatarDisplay(diretorio_temporarios[chamada])
             except:
                 print("diretorio inesistente")
                 drive_oled_display128x64.display('diretorio',0,0)
@@ -43,7 +43,7 @@ try:
             drive_oled_display128x64.display('arquivo',26,0)
             drive_oled_display128x64.display('aser',36,0)
             drive_oled_display128x64.display('deletado',46,0)
-            chamada=drive2_teclado_matriz6x5.teclado()
+            chamada=drive2_teclado_matriz6x5.teclado(False)
             try:
                 drive_oled_display128x64.display_clear()
                 diretorio_temporarios.remove(diretorio_temporarios[chamada])
