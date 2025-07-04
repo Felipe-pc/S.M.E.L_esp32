@@ -4,6 +4,8 @@ try:
     import time
     import formatador_de_tela
     def teclado(a=True):
+        alfabeto1=''
+        numero=0
         tecladoVirtual=False
         if tecladoVirtual==False:
             #pinos de envio de sinal do teclado
@@ -365,9 +367,13 @@ try:
                 Pin_entrada5.value(0)
             #envio de informação
             if a==False:
-                return numero[0]
+                for ie in numero:
+                    numero1=numero1+ie
+                return numero1
             else:
-                return alfabeto[0]
+                for i in alfabeto:
+                    alfabeto1=alfabeto1+i
+                return alfabeto1
 #opção tecladoVirtual
         else:
             while True:
