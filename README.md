@@ -1,6 +1,7 @@
 Este projeto é a criação de um sistema embarcado.
 peças:
-esp32-wroom-32
+
+esp32-wroom-32(ou outro dispositovo que suporte micropython)
 display oled 128x64
 teclado de matriz 6 colunas por 5 linhas
 

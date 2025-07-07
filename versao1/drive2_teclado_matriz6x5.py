@@ -308,17 +308,23 @@ try:
                 Pin_entrada5.value(1)
                 if Pin_entrada5.value()==1 and Pin_envio5.value()==1:
                     if a==True:
-                        numero=len(alfabeto)
-                        tamanho=tamanho-1
-                        numero.remove(numero[tamanho])
-                        time.sleep(delei)
+                        try:
+                            numero=len(numero)
+                            tamanho=tamanho-1
+                            numero.remove(numero[tamanho])
+                            time.sleep(delei)
+                        except:
+                            print('erro a lista esta vazia')
                     else:
-                        tamanho=len(alfabeto)
-                        tamanho=tamanho-1
-                        alfabeto.remove(alfabeto[tamanho])
-                        time.sleep(delei)
-                        drive_oled_display128x64.display_clear()
-                        formatador_de_tela.formatarDisplay(alfabeto)
+                        try:
+                            tamanho=len(alfabeto)
+                            tamanho=tamanho-1
+                            alfabeto.remove(alfabeto[tamanho])
+                            time.sleep(delei)
+                            drive_oled_display128x64.display_clear()
+                            formatador_de_tela.formatarDisplay(alfabeto)
+                        except:
+                            print('erro a lista esta vazia')
                 Pin_entrada5.value(0)
                 Pin_entrada1.value(1)
 

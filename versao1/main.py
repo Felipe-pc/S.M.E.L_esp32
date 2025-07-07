@@ -31,13 +31,14 @@ try:
             chamada=drive2_teclado_matriz6x5.teclado()
             try:
                 drive_oled_display128x64.display_clear()
-                formatador_de_tela.formatarDisplay(diretorio_temporarios[chamada])
+                drive_oled_display128x64.formatarDisplay(diretorio_temporarios[chamada])
             except:
                 print("diretorio inesistente")
                 drive_oled_display128x64.display('diretorio',0,0)
                 drive_oled_display128x64.display('inesistente',16,0)
         #deletar arquivo
         elif comando=='rm':
+            drive_oled_display128x64.display_clear()
             drive_oled_display128x64.display('digiti o',0,0)
             drive_oled_display128x64.display('numero do',16,0)
             drive_oled_display128x64.display('arquivo',26,0)
