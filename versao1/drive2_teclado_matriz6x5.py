@@ -2,7 +2,6 @@ try:
     from machine import Pin
     import drive_oled_display128x64
     import time
-    import formatador_de_tela
     def teclado(a=True):
         alfabeto1=''
         numero=0
@@ -37,7 +36,7 @@ try:
                 Pin_entrada5.value(0)
                 #leituras
                 if atualiza > atualizado:
-                    formatador_de_tela.formatarDisplay(alfabeto)
+                    drive_oled_display128x64.formatarDisplay(alfabeto)
                     atualizado=atualizado+1
                 #coluna 1 linha 1 a 5
                 Pin_entrada1.value(1)
@@ -307,7 +306,7 @@ try:
                 Pin_entrada4.value(0)
                 Pin_entrada5.value(1)
                 if Pin_entrada5.value()==1 and Pin_envio5.value()==1:
-                    if a==True:
+                    if a==False:
                         try:
                             numero=len(numero)
                             tamanho=tamanho-1
@@ -322,7 +321,7 @@ try:
                             alfabeto.remove(alfabeto[tamanho])
                             time.sleep(delei)
                             drive_oled_display128x64.display_clear()
-                            formatador_de_tela.formatarDisplay(alfabeto)
+                            drive_oled_display128x64.formatarDisplay(alfabeto)
                         except:
                             print('erro a lista esta vazia')
                 Pin_entrada5.value(0)
