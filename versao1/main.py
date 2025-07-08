@@ -18,6 +18,7 @@ try:
         #comando de encerar
         if comando == 'endboot':
             operacional=False
+            drive_oled_display128x64.display_clear()
             drive_oled_display128x64.display('encerando...',0,0)
             time.sleep(2)
             drive_oled_display128x64.display_clear()
