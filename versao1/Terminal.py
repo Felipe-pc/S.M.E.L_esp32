@@ -44,6 +44,11 @@ try:
                 operacional=False
                 prioridade=3
 
+            #listar arquivos
+            if resposta=='ls':
+                operacional=False
+                prioridade=4
+
     #criar arquivos
         if operacional==False and prioridade==1:
             return 'mkdir'
@@ -59,6 +64,10 @@ try:
     #deletar o diretorio
         elif operacional==False and prioridade==3:
             return 'rm'
+
+    #listar arquivos
+        elif operacional==False and prioridade==4:
+            return 'ls'
 
 except:
     print("terminal esta com erro")
