@@ -313,7 +313,9 @@ try:
                             numero.remove(numero[tamanho])
                             time.sleep(delei)
                         except:
-                            print('erro a lista esta vazia')
+                            return 0
+                            break
+
                     else:
                         try:
                             tamanho=len(alfabeto)
@@ -323,7 +325,8 @@ try:
                             drive_oled_display128x64.display_clear()
                             drive_oled_display128x64.formatarDisplay(alfabeto)
                         except:
-                            print('erro a lista esta vazia')
+                            break
+
                 Pin_entrada5.value(0)
                 Pin_entrada1.value(1)
 
@@ -397,5 +400,4 @@ try:
                     return numero
                     break
 except:
-    print("erro de drive teclado 2")
-    print("verificar código")
+    print("ERRO verificar onde foi modificado da ultima vez")

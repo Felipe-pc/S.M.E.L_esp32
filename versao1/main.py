@@ -76,7 +76,8 @@ try:
             time.sleep(8)
 
 except ImportError:
-    print("erro nos driver principais")
-    print("imposivel execultar o sistema")
+    print("erro nas importaçoes")
+except SyntaxError:
+    print("erro na sintax")
 
 
