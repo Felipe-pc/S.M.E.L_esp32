@@ -34,7 +34,7 @@ try:
             drive_oled_display128x64.display('digiti o',0,0)
             drive_oled_display128x64.display('numero do',16,0)
             drive_oled_display128x64.display('arquivo',26,0)
-            chamada=drive2_teclado_matriz6x5.teclado(False)
+            chamada=drive2_teclado_matriz6x5.teclado(False,True)
             try:
                 drive_oled_display128x64.display_clear()
                 drive_oled_display128x64.formatarDisplay(diretorio_temporarios[chamada])
@@ -53,7 +53,7 @@ try:
             drive_oled_display128x64.display('arquivo',26,0)
             drive_oled_display128x64.display('aser',36,0)
             drive_oled_display128x64.display('deletado',46,0)
-            chamada=drive2_teclado_matriz6x5.teclado(False)
+            chamada=drive2_teclado_matriz6x5.teclado(False,True)
             try:
                 drive_oled_display128x64.display_clear()
                 diretorio_temporarios.remove(diretorio_temporarios[chamada])
