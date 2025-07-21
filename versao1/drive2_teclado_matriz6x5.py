@@ -1,4 +1,5 @@
 from machine import Pin
+import drive_oled_display128x64
 import time
 def teclado(alterar=True,intero=False):
 
@@ -27,6 +28,8 @@ def teclado(alterar=True,intero=False):
     saidastream=''
     cont=0
     operacional=True
+    atualizado=0
+    atualiza=0
     while operacional:
         if cont == 0 or cont == 5 or cont == 10 or cont == 15 or cont == 20 or cont == 25:
             Pin_entrada1.value(1)
@@ -100,9 +103,9 @@ def teclado(alterar=True,intero=False):
 
 
         if lista_de_instrução[cont]:
-            print(lista_de_instrução[cont])
             time.sleep(0.1)
             if alterar==False:
+                atualiza=atualiza+1
                 lista_final_numero.append(lista_de_numero[cont])
                 if lista_de_numero[cont]=='enter':
                     operacional=False
@@ -114,14 +117,19 @@ def teclado(alterar=True,intero=False):
                     lista_final_numero.remove(lista_final_numero[tamanhoBs1])
                     lista_final_numero.remove('delet')
 
-                    if lista_de_numero[cont]=='troca':
-                        alterar=True
-                        lista_final_numero.remove('troca')
+                if lista_de_numero[cont]=='troca':
+                    alterar=True
+                    lista_final_numero.remove('troca')
+
+                if atualiza > atualizado:
+                    atualizado=atualiza
+                    drive_oled_display128x64.display_clear()
+                    drive_oled_display128x64.formatarDisplay(lista_final)
 
             else:
                 isso=lista_de_alfabetica[cont]
                 lista_final.append(isso)
-                print(lista_final)
+                atualiza=atualiza+1
                 if lista_de_alfabetica[cont]=='enter':
                     operacional=False
                     lista_final.remove('enter')
@@ -130,11 +138,17 @@ def teclado(alterar=True,intero=False):
                     tamanhoBs=len(lista_final)
                     tamanhoBs=tamanhoBs-2
                     lista_final.remove(lista_final[tamanhoBs])
-                    #lista_final.remove('delet')
+                    lista_final.remove('delet')
 
                 if lista_de_alfabetica[cont]=='troca':
                     alterar=False
                     lista_final.remove('troca')
+
+                if atualiza > atualizado:
+                    atualizado=atualiza
+                    drive_oled_display128x64.display_clear()
+                    drive_oled_display128x64.formatarDisplay(lista_final)
+
             time.sleep(0.1)
         cont=cont+1
         if cont == 30:
@@ -142,25 +156,25 @@ def teclado(alterar=True,intero=False):
 
     tamanhoFim=len(lista_final_numero)
     for i2 in range(0,tamanhoFim):
-        if lista_final_numero[i2]==0:
+        if lista_final_numero[i2]=='0':
             interos.append(0)
-        elif lista_final_numero[i2]==1:
+        elif lista_final_numero[i2]=='1':
             interos.append(1)
-        elif lista_final_numero[i2]==2:
+        elif lista_final_numero[i2]=='2':
             interos.append(2)
-        elif lista_final_numero[i2]==3:
+        elif lista_final_numero[i2]=='3':
             interos.append(3)
-        elif lista_final_numero[i2]==4:
+        elif lista_final_numero[i2]=='4':
             interos.append(4)
-        elif lista_final_numero[i2]==5:
+        elif lista_final_numero[i2]=='5':
             interos.append(5)
-        elif lista_final_numero[i2]==6:
+        elif lista_final_numero[i2]=='6':
             interos.append(6)
-        elif lista_final_numero[i2]==7:
+        elif lista_final_numero[i2]=='7':
             interos.append(7)
-        elif lista_final_numero[i2]==8:
+        elif lista_final_numero[i2]=='8':
             interos.append(8)
-        elif lista_final_numero[i2]==0:
+        elif lista_final_numero[i2]=='9':
             interos.append(9)
 
     if alterar==False and intero==True:
@@ -173,7 +187,6 @@ def teclado(alterar=True,intero=False):
         for i2 in lista_final_numero:
             junta=junta+i2
         return junta
-
 
 
 
