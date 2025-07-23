@@ -124,7 +124,7 @@ def teclado(alterar=True,intero=False):
                 if atualiza > atualizado:
                     atualizado=atualiza
                     drive_oled_display128x64.display_clear()
-                    drive_oled_display128x64.formatarDisplay(lista_final)
+                    drive_oled_display128x64.formatarDisplay(lista_final_numero)
 
             else:
                 isso=lista_de_alfabetica[cont]
