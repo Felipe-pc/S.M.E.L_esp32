@@ -30,34 +30,34 @@ try:
                     if cont ==120:
                         chave1=chave1+1
                         cont=0
-                elif cont <= 240 and chave1==1:
+                elif cont <= 120 and chave1==1:
                     display(i[emular],16,cont)
                     cont=cont+6
-                    if cont ==240:
+                    if cont ==120:
                         chave1=chave1+1
                         cont=0
-                elif cont <= 360 and chave1==2:
+                elif cont <= 120 and chave1==2:
                     display(i[emular],26,cont)
                     cont=cont+6
-                    if cont ==360:
+                    if cont ==120:
                         chave1=chave1+1
                         cont=0
-                elif cont <= 480 and chave1==3:
+                elif cont <= 120 and chave1==3:
                     display(i[emular],36,cont)
                     cont=cont+6
-                    if cont == 480:
+                    if cont == 120:
                         chave1=chave1+1
                         cont=0
-                elif cont <= 600 and chave1==4:
+                elif cont <= 120 and chave1==4:
                     display(i[emular],46,cont)
                     cont=cont+6
-                    if cont == 600:
+                    if cont == 120:
                         chave1=chave1+1
                         cont=0
-                elif cont <= 720 and chave1==5:
+                elif cont <= 120 and chave1==5:
                     display(i[emular],56,cont)
                     cont=cont+6
-                    if cont == 720:
+                    if cont == 120:
                         chave1=chave1+1
                         cont=0
 except:
