@@ -2,7 +2,7 @@ try:
     import drive_oled_display128x64
     import drive2_teclado_matriz6x5
     import time
-    import t_arquivos
+    import criador_de_arquivos
     def Terminal():
         operacional=True
         prioridade=0
@@ -24,50 +24,30 @@ try:
                 drive_oled_display128x64.display('vazia',26,0)
                 time.sleep(4)
 
-            #criar pasta(text)
-            if resposta=='mkdir':
-                operacional=False
-                prioridade=1
 
             #comando(endboot)
             if resposta=='endboot':
                 operacional=False
                 prioridade=0
 
-            #pesquisa diretorio
-            if resposta=='cd':
-                operacional=False
-                prioridade=2
 
-            #deletar o diretorio
-            if resposta=='rm':
-                operacional=False
-                prioridade=3
+            #criar arquivos.txt
+            if resposta=='mk arquivo':
+                criador_de_arquivos.criar_arquivo()
 
-            #listar arquivos
-            if resposta=='ls':
-                operacional=False
-                prioridade=4
 
-    #criar arquivos
-        if operacional==False and prioridade==1:
-            return 'mkdir'
+            #criar arquivos .py
+            if resposta=='mk arquivo py':
+                criador_de_arquivos.criar_arquivo(True)
+
+
+            #mostrar arquivo
+            if resposta=='cat':
+                criador_de_arquivos.exibir_arquivos()
 
     #encerrar
-        elif operacional==False and prioridade==0:
+        if operacional==False and prioridade==0:
             return 'endboot'
-
-    #procurar arquivos
-        elif operacional==False and prioridade==2:
-            return 'cd'
-
-    #deletar o diretorio
-        elif operacional==False and prioridade==3:
-            return 'rm'
-
-    #listar arquivos
-        elif operacional==False and prioridade==4:
-            return 'ls'
 
 except:
     print("terminal esta com erro")

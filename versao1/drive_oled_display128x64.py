@@ -1,6 +1,7 @@
 try:
     from machine import Pin,I2C#bibliotecas
     import ssd1306
+    import time
     #comfiguraçao do display
     i2c=I2C(0,scl=Pin(22),sda=Pin(21))
     oled=ssd1306.SSD1306_I2C(128,64,i2c)
@@ -58,7 +59,9 @@ try:
                     display(i[emular],56,cont)
                     cont=cont+6
                     if cont == 120:
-                        chave1=chave1+1
+                        time.sleep(8)
+                        display_clear()
+                        chave1=0
                         cont=0
 except:
     print("erro do drive gráfico")
