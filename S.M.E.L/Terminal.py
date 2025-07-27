@@ -3,7 +3,7 @@ try:
     import drive2_teclado_matriz6x5
     import time
     import criador_de_arquivos
-    def Terminal():
+    def terminal():
         operacional=True
         prioridade=0
         while operacional:
