@@ -46,10 +46,21 @@ def criar_arquivo(a=False):
 
 
 
-def exibir_arquivos()
-    resposta=drive2_teclado_matriz6x5.teclado()
-    arquivo=open(resposta,'r')
-    arquivo2=arquivo.read()
-    drive_oled_display128x64.formatarDisplay(arquivo2)
-    time.sleep(6)
-    arquivo.close()
+def exibir_arquivos(a=False):
+    if a==True:
+        resposta=drive2_teclado_matriz6x5.teclado()
+        resposta=resposta+'.py'
+        arquivo=open(resposta,'r')
+        arquivo2=arquivo.read()
+        drive_oled_display128x64.formatarDisplay(arquivo2)
+        time.sleep(6)
+        arquivo.close()
+
+    else:
+        resposta=drive2_teclado_matriz6x5.teclado()
+        resposta=resposta+'.txt'
+        arquivo=open(resposta,'r')
+        arquivo2=arquivo.read()
+        drive_oled_display128x64.formatarDisplay(arquivo2)
+        time.sleep(6)
+        arquivo.close()
