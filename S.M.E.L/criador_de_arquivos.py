@@ -6,10 +6,10 @@ import time
 def criar_arquivo(a=False):
     escrita=True
     if a==True:
-        drive_oled_display128x64.formatarDisplay('nessa opcao voce esta criando arquivos .py ')
+        drive_oled_display128x64.formatar_display('nessa opcao voce esta criando arquivos .py ')
         time.sleep(6)
         drive_oled_display128x64.display_clear()
-        drive_oled_display128x64.formatarDisplay('para comesar um nova linha pressione espaso  depois enter e fim para fechar')
+        drive_oled_display128x64.formatar_display('para comesar um nova linha pressione espaso  depois enter e fim para fechar')
         time.sleep(6)
         resposta=drive2_teclado_matriz6x5()
         resposta=resposta+'.py'
@@ -25,10 +25,10 @@ def criar_arquivo(a=False):
                 arquivo.write(f"\n")
             arquivo.close()
     else:
-        drive_oled_display128x64.formatarDisplay('nessa opcao voce esta criando um arquivo .txt')
+        drive_oled_display128x64.formatar_display('nessa opcao voce esta criando um arquivo .txt')
         time.sleep(6)
         drive_oled_display128x64.display_clear()
-        drive_oled_display128x64.formatarDisplay('para comesar um nova linha pressione espaso depois enter e fim para fechar')
+        drive_oled_display128x64.formatar_display('para comesar um nova linha pressione espaso depois enter e fim para fechar')
         time.sleep(6)
         resposta=drive2_teclado_matriz6x5.teclado()
         resposta=resposta+'.txt'
@@ -52,7 +52,7 @@ def exibir_arquivos(a=False):
         resposta=resposta+'.py'
         arquivo=open(resposta,'r')
         arquivo2=arquivo.read()
-        drive_oled_display128x64.formatarDisplay(arquivo2)
+        drive_oled_display128x64.formatar_display(arquivo2)
         time.sleep(6)
         arquivo.close()
 

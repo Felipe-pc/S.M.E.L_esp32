@@ -99,7 +99,7 @@ def teclado(alterar=True,intero=False):
                             'd','j','p','v','enter','e','k','q','w','delet','f','l','r','x','troca']
 
         lista_de_numero=['1','4','7','<','/','2','5','8','>','*','3','6','9','-',' ',
-                         '0','=','.','(','enter','+','[','%',')','delet','?',']','!','"','troca']
+                         '0','=','.','(','enter','+','[','%',')','delet','_',']','!','"','troca']
 
 
         if lista_de_instrução[cont]:
@@ -124,7 +124,7 @@ def teclado(alterar=True,intero=False):
                 if atualiza > atualizado:
                     atualizado=atualiza
                     drive_oled_display128x64.display_clear()
-                    drive_oled_display128x64.formatarDisplay(lista_final_numero)
+                    drive_oled_display128x64.formatar_display(lista_final_numero)
 
             else:
                 isso=lista_de_alfabetica[cont]
@@ -147,7 +147,7 @@ def teclado(alterar=True,intero=False):
                 if atualiza > atualizado:
                     atualizado=atualiza
                     drive_oled_display128x64.display_clear()
-                    drive_oled_display128x64.formatarDisplay(lista_final)
+                    drive_oled_display128x64.formatar_display(lista_final)
 
             time.sleep(0.1)
         cont=cont+1

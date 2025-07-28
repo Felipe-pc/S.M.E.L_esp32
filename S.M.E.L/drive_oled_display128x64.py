@@ -19,7 +19,7 @@ try:
 
 
     #ferramenta de uso para formatar display para texto grades automaticamente
-    def formatarDisplay(a):
+    def formatar_display(a):
         cont=0
         chave1=0
         for i in a:

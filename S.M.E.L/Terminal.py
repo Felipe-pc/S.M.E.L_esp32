@@ -33,26 +33,27 @@ def terminal():
 
         #criar arquivos.txt
         if resposta=='mk arquivo':
-            criador_de_arquivos.criar_arquivo()
             drive_oled_display128x64.display_clear()
+            criador_de_arquivos.criar_arquivo()
 
 
         #criar arquivos .py
         if resposta=='mk arquivo py':
-            criador_de_arquivos.criar_arquivo(True)
             drive_oled_display128x64.display_clear()
+            criador_de_arquivos.criar_arquivo(True)
 
 
         #mostrar arquivo .txt
         if resposta=='cat txt':
-            criador_de_arquivos.exibir_arquivos()
             drive_oled_display128x64.display_clear()
+            criador_de_arquivos.exibir_arquivos()
 
 
         #mostrar arquivo .py
         if resposta=='cat py':
-            criador_de_arquivos.exibir_arquivos(True)
             drive_oled_display128x64.display_clear()
+            criador_de_arquivos.exibir_arquivos(True)
+
 
 #encerrar
     if operacional==False and prioridade==0:
