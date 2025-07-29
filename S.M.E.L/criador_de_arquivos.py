@@ -11,7 +11,7 @@ def criar_arquivo(a=False):
         drive_oled_display128x64.display_clear()
         drive_oled_display128x64.formatar_display('para comesar um nova linha pressione espaso  depois enter e fim para fechar')
         time.sleep(6)
-        resposta=drive2_teclado_matriz6x5()
+        resposta=drive2_teclado_matriz6x5.teclado()
         resposta=resposta+'.py'
         arquivo=open(resposta,'a')
         arquivo.close()
@@ -64,3 +64,10 @@ def exibir_arquivos(a=False):
         drive_oled_display128x64.formatarDisplay(arquivo2)
         time.sleep(6)
         arquivo.close()
+
+
+def execultar_python():
+    resposta=drive2_teclado_matriz6x5.teclado()
+    arquivo=open(resposta,'r')
+    execultar=arquivo.read()
+    exec(execultar)

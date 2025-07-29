@@ -55,6 +55,11 @@ def terminal():
             criador_de_arquivos.exibir_arquivos(True)
 
 
+        #execultat python
+        if resposta=='python':
+            drive_oled_display128x64.display_clear()
+            criador_de_arquivos.execultar_python()
+
 #encerrar
     if operacional==False and prioridade==0:
         return 'endboot'
